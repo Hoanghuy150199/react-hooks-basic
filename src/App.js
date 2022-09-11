@@ -5,8 +5,11 @@ import PostList from "./components/PostList";
 import Pagination from "./components/Pagination";
 import PostFiltersForm from "./components/PostFiltersForm";
 import Clock from "./components/Clock";
+import BetterClock from "./components/BetterClock";
 // import TodoList from "./components/TodoList";
 // import TodoForm from "./components/TodoForm";
+import MagicBox from "./components/MagicBox";
+import Hero from "./components/Hero";
 
 function App() {
   const [todoList, setToDoList] = useState([
@@ -87,7 +90,7 @@ function App() {
   }
 
   const [showClock, setShowClock] = useState(true);
-
+  const [count, setCount] = useState(0);
   return (
     <div className="app">
       <h1>React Hooks</h1>
@@ -99,11 +102,18 @@ function App() {
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
 
-      {showClock && <Clock />}
+      {/* {showClock && <Clock />}
+      {showClock && <BetterClock />}
       <div>
         <button onClick={() => setShowClock(false)}>Hide clock</button>
         <button onClick={() => setShowClock(true)}>Show clock</button>
-      </div>
+      </div> */}
+
+      {/* <MagicBox /> */}
+
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <Hero name="JoJo" />
     </div>
   );
 }
